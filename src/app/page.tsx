@@ -1,9 +1,10 @@
+import SearchBarWithButton from '@/components/SearchBarWithButton';
 import styles from './page.module.css';
 
 export default function Home() {
 	return (
-		<main className={styles.main}>
-			<h1>hey</h1>
-		</main>
+		<div className={styles.main}>
+			<SearchBarWithButton />
+		</div>
 	);
 }
