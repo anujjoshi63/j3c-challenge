@@ -13,7 +13,7 @@ const getGifsFromGiphy = async (
     try {
         const response = await fetch(url);
         const gifsData = await response.json();
-        console.log(gifsData);
+        // console.log(gifsData);
         if (reset) setGifs(gifsData.gifs);
         else if (offset === 0) setGifs(gifsData.gifs);
         else setGifs((old: Gif[]) => [...old, ...gifsData.gifs]);

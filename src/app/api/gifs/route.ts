@@ -12,7 +12,7 @@ export async function GET(request: Request) {
     const url = `https://api.giphy.com/v1/gifs/search?api_key=${GIPHY_API_KEY}&q=${query}&limit=${limit}&offset=${offset}&rating=${rating}&lang=en&bundle=low_bandwidth`;
     const response = await fetch(url);
     const data = await response.json();
-    console.log({ data: data.data[0].rating })
+    // console.log({ data: data.data[0].rating })
     const gifs = data.data.map((gif: Gif) => ({
         id: gif.id,
         url: gif.images.original.url
