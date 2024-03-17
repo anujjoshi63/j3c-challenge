@@ -1,0 +1,197 @@
+.button {
+	border-radius: 9999px;
+	margin: 0 100px;
+	font-weight: bold;
+	font-size: 1rem;
+	cursor: pointer;
+	color: #eee;
+}
+
+.button-outlined-bg {
+	display: block;
+	border-radius: 2rem;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%) translateY(-50%);
+	width: auto;
+	height: 3rem;
+}
+
+.button-outlined-bg .button-circle {
+	stroke-dasharray: 1;
+	stroke-dashoffset: 1;
+	fill: none;
+}
+
+.button-outlined-bg .button-circle.circle-1 {
+	stroke-dashoffset: 0;
+}
+
+.button-outlined-bg .button-circle.circle-2 {
+	stroke: #17f1d1;
+}
+
+[data-theme='turquoise'] .button-outlined-bg .button-circle.circle-2 {
+	stroke: #a374ff;
+}
+
+.button-outlined-bg .button-circle.circle-3 {
+	stroke: #ffd074;
+}
+
+[data-theme='yellow'] .button-outlined-bg .button-circle.circle-3 {
+	stroke: #a374ff;
+}
+
+.button-outlined-bg .button-circle.-hover,
+.button-outlined-bg .button-circle.circle-1 {
+	stroke: #a374ff;
+}
+
+.button-outlined-bg .button-circle.circle-4 {
+	stroke: #fafaf6;
+}
+
+.button-outlined {
+	position: relative;
+	background-color: transparent;
+	border: 1px solid #a374ff;
+}
+
+[data-button-svg] {
+	border-style: none;
+}
+
+.button-circles {
+	transform-box: fill-box;
+	transform-origin: center;
+	transform: rotate(0.1deg);
+}
+
+.button-inner,
+.button-inner-hover,
+.button-inner-static {
+	pointer-events: none;
+	display: block;
+}
+
+.button-inner {
+	position: relative;
+}
+
+.button-inner-hover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	transform: translateY(70%);
+}
+
+.button:hover .button-bg {
+	transform: scale(0.95);
+}
+
+.button:hover .button-inner-static {
+	opacity: 0;
+	transform: translateY(-70%);
+	transition: transform 1.4s cubic-bezier(0.19, 1, 0.22, 1),
+		opacity 0.3s linear;
+}
+
+.button:hover .button-inner-hover {
+	opacity: 1;
+	transform: translateY(0);
+	transition: transform 1.4s cubic-bezier(0.19, 1, 0.22, 1),
+		opacity 1.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.button:hover .button-circles,
+.button-round:hover .button-circles {
+	transform: rotate(90deg);
+	transition: transform 1.4s cubic-bezier(0.4, 0, 0, 1);
+}
+
+.button:hover .button-circles-o,
+.button-round:hover .button-circles-o {
+	opacity: 0;
+	transition: opacity 0.1s linear;
+	transition-delay: 1.2s;
+}
+
+.button:hover .button-circle,
+.button-round:hover .button-circle {
+	transition: stroke-dashoffset 1.4s cubic-bezier(0.4, 0, 0, 1);
+	stroke-dashoffset: 0;
+	stroke-dasharray: 1;
+}
+
+.button:hover .button-circle.circle-2,
+.button-round:hover .button-circle.circle-2 {
+	transition-duration: 1.4s;
+}
+
+.button:hover .button-circle.circle-3,
+.button-round:hover .button-circle.circle-3 {
+	transition-delay: 0.15s;
+	transition-duration: 1.25s;
+}
+
+.button:hover .button-circle.circle-4,
+.button-round:hover .button-circle.circle-4 {
+	transition-delay: 0.3s;
+	transition-duration: 1.1s;
+}
+
+.button:hover .button-circle.-hover,
+.button-round:hover .button-circle.-hover {
+	transition-delay: 0.45s;
+	transition-duration: 0.95s;
+}
+
+.button:hover .button-circle.-yellow,
+.button:hover .button-circle.-turquoise,
+.button:hover .button-circle.-white,
+.button:hover .button-circle.-hover,
+.button-round:hover .button-circle.-yellow,
+.button-round:hover .button-circle.-turquoise,
+.button-round:hover .button-circle.-white,
+.button-round:hover .button-circle.-hover {
+	stroke-dashoffset: 0;
+}
+
+.button:hover .button-bgcircle,
+.button-round:hover .button-bgcircle {
+	transition: transform 1.3s cubic-bezier(0.19, 1, 0.22, 1),
+		opacity 0.3s linear;
+}
+
+.button:hover .button-bgcircle-1,
+.button-round:hover .button-bgcircle-1 {
+	transform: scale(1);
+}
+
+.button:hover .button-bgcircle-2,
+.button-round:hover .button-bgcircle-2 {
+	transition-delay: 0.1s;
+	transform: scale(1);
+}
+
+.button:hover .button-bgcircle-3,
+.button-round:hover .button-bgcircle-3 {
+	transition-delay: 0.2s;
+	transform: scale(1);
+}
+.searchBar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+	gap: 1rem;
+	padding: 1rem;
+}
+
+.textField {
+	flex: 1;
+	min-width: fit-content;
+}
