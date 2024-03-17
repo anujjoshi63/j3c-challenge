@@ -46,34 +46,42 @@ export default function SearchBarInputs({
 		<ThemeProvider theme={darkTheme}>
 			<CssBaseline />
 			<div className="searchBar">
-				<TextField
-					id="outlined-basic"
-					label="Search for GIFs"
-					variant="outlined"
-					type="search"
-					value={query}
-					onChange={e => {
-						setQuery(e.target.value);
-						setGifs([]);
+				<form
+					action="#"
+					onSubmit={e => {
+						e.preventDefault();
+						handleSearchGifs();
 					}}
-					className="textField"
-				/>
-				<FancyButton
-					handleSearchGifs={handleSearchGifs}
-					disabled={query === ''}
-				/>
-				{/* Search */}
-				<Select
-					value={filter}
-					label="Filter"
-					onChange={handleChangeFilter}
 				>
-					{['G', 'PG', 'PG-13', 'R'].map(rating => (
-						<MenuItem key={rating} value={rating.toLowerCase()}>
-							{rating}
-						</MenuItem>
-					))}
-				</Select>
+					<TextField
+						id="outlined-basic"
+						label="Search for GIFs"
+						variant="outlined"
+						type="search"
+						value={query}
+						onChange={e => {
+							setQuery(e.target.value);
+							setGifs([]);
+						}}
+						className="textField"
+					/>
+					<FancyButton
+						handleSearchGifs={handleSearchGifs}
+						disabled={query === ''}
+					/>
+					{/* Search */}
+					<Select
+						value={filter}
+						label="Filter"
+						onChange={handleChangeFilter}
+					>
+						{['G', 'PG', 'PG-13', 'R'].map(rating => (
+							<MenuItem key={rating} value={rating.toLowerCase()}>
+								{rating}
+							</MenuItem>
+						))}
+					</Select>
+				</form>
 			</div>
 		</ThemeProvider>
 	);
